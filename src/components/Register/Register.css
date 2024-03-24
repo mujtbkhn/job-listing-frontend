@@ -1,0 +1,43 @@
+*{
+    font-family:  Roboto, sans-serif;
+    box-sizing: border-box;
+}
+.register__main{
+    display: flex;
+}
+.register__left{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+    padding: 80px 50px;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
+.input > input{
+    
+    padding: 20px 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-style: none;
+    border: 1px solid black;
+}
+.tandc{
+    display: flex;
+}
+button{
+    padding: 15px 60px;
+}
+.sign__in{
+    display: flex;
+}
+.sign__in > span{
+    text-decoration: underline;
+}
+.register__right{
+    display: flex;
+    flex-basis: 40%;
+}
