@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import "./JobPost.css";
 import { DEFAULT_SKILLS } from "../../utils/constants";
-import { createJobPost } from "../../apis/job";
+import { createJobPost, updateJobPostById } from "../../apis/job";
+import { useLocation } from "react-router-dom";
 
 const JobPost = () => {
+  const { state } = useLocation();
+  // console.log(state)
+  const [stateData] = useState(state?.jobDetails);
   const [formData, setFormData] = useState({
-    companyName: "",
-    logoUrl: "",
-    jobPosition: "",
-    monthlySalary: "",
-    jobType: "",
-    locationType: "",
-    location: "",
-    description: "",
-    about: "",
-    skills: [],
+    companyName: "" || stateData?.companyName,
+    logoUrl: "" || stateData?.logoUrl,
+    title: "" || stateData?.title,
+    salary: "" || stateData?.salary,
+    jobType: "" || stateData?.jobType,
+    locationType: "" || stateData?.locationType,
+    location: "" || stateData?.location,
+    duration: "" || stateData?.duration,
+    description: "" || stateData?.description,
+    about: "" || stateData?.about,
+    skills: [] || stateData?.skills,
+    information: "" || stateData?.information,
   });
 
   const handleChange = (event) => {
@@ -40,8 +46,8 @@ const JobPost = () => {
     if (
       !formData.companyName ||
       !formData.logoUrl ||
-      !formData.jobPosition ||
-      !formData.monthlySalary ||
+      !formData.title ||
+      !formData.salary ||
       !formData.jobType ||
       !formData.locationType ||
       !formData.location ||
@@ -49,8 +55,13 @@ const JobPost = () => {
       !formData.about ||
       !formData.skills
     ) {
-        console.log("error occurred ")
+      console.log("error occurred ");
       return;
+    }
+    console.log("success");
+    if(state?.edit){
+      await updateJobPostById(stateData?._id, formData)
+      return
     }
     await createJobPost(formData);
   };
@@ -65,7 +76,6 @@ const JobPost = () => {
             <input
               type="text"
               name="companyName"
-              id=""
               value={formData.companyName}
               onChange={handleChange}
             />
@@ -75,55 +85,59 @@ const JobPost = () => {
             <input
               type="text"
               name="logoUrl" // Corrected name attribute
-              id=""
               onChange={handleChange}
               value={formData.logoUrl}
             />
           </div>
           <div>
-            <label htmlFor="jobPosition">Job Position</label>
+            <label htmlFor="title">Title</label>
             <input
               type="text"
-              name="jobPosition"
-              id=""
+              name="title"
               onChange={handleChange}
-              value={formData.jobPosition}
+              value={formData.title}
             />
           </div>
           <div>
-            <label htmlFor="monthlySalary">Monthly Salary</label>
+            <label htmlFor="duration">Duration:</label>
             <input
               type="text"
-              name="monthlySalary"
-              id=""
+              name="duration"
+              value={formData.duration}
               onChange={handleChange}
-              value={formData.monthlySalary}
+              placeholder="Enter job duration"
+            />
+          </div>
+          <div>
+            <label htmlFor="salary">Monthly Salary</label>
+            <input
+              type="text"
+              name="salary"
+              onChange={handleChange}
+              value={formData.salary}
             />
           </div>
           <div>
             <label htmlFor="jobType">Job Type</label>
             <select
               name="jobType"
-              id=""
               onChange={handleChange}
               value={formData.jobType}
             >
               <option value="">Select Job Type</option>
-              <option value="full-time">Full-time</option>
-              <option value="part-time">Part-time</option>
+              <option value="Full-time">Full-time</option>
+              <option value="Part-time">Part-time</option>
             </select>
           </div>
           <div>
             <label htmlFor="locationType">Location Type</label>
             <select
               name="locationType"
-              id=""
               onChange={handleChange}
               value={formData.locationType}
             >
-              <option value="">Select</option>
-              <option value="">Remote</option>
-              <option value="">Office</option>
+              <option value="remote">Remote</option>
+              <option value="office">Office</option>
             </select>
           </div>
           <div>
@@ -131,7 +145,6 @@ const JobPost = () => {
             <input
               type="text"
               name="location"
-              id=" "
               onChange={handleChange}
               value={formData.location}
             />
@@ -155,11 +168,23 @@ const JobPost = () => {
             ></textarea>
           </div>
           <div>
+            <label htmlFor="skills">Information:</label>
+            <input
+              type="text"
+              name="information"
+              value={formData.information}
+              onChange={handleChange}
+              placeholder="information"
+            />
+          </div>
+          <div>
             <label htmlFor="skills">Skills</label>
-            <select name="skills" id="" onChange={addSkills}>
-              <option>Please select skills </option>
+            <select name="skills" type="text" onChange={addSkills}>
+              <option disabled selected>
+                Please select skills{" "}
+              </option>
               {DEFAULT_SKILLS.map((element) => (
-                <option value={element}>{element}</option>
+                <option>{element}</option>
               ))}
             </select>
           </div>
@@ -171,7 +196,9 @@ const JobPost = () => {
               </div>
             ))}
           </div>
-          <button onClick={handleSubmit}>Submit</button>
+          <button onClick={handleSubmit}>
+            {state?.edit ? "Edit Job" : "Add Job"}
+          </button>
           <button>Cancel</button>
         </div>
         <div className="job__post__right">Right</div>
