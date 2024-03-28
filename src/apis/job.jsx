@@ -43,7 +43,7 @@ export const getAllJobs = async (filter) => {
     const reqUrl = `${backend_url}/job/all?title=${
       filter?.title || ""
     }&skills=${filter?.skills || ""}`;
-    debugger
+    // debugger
     const response = await axios.get(reqUrl);
     // console.log(response?.data);
     return response.data

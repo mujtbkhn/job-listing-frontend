@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../apis/auth";
+import image from "../../assets/images/login-image.png";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -43,18 +44,18 @@ const Login = () => {
     <>
       <div className="login__main">
         <div className="login__left">
-          <h1>Already have an account</h1>
+          <h1>Already have an account?</h1>
           <p>Your personal Job Finder</p>
           <div className="input">
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               name="email"
               onChange={handleOnChange}
             />
             <input
               type="password"
-              placeholder="password"
+              placeholder="Password"
               name="password"
               onChange={handleOnChange}
             />
@@ -74,7 +75,7 @@ const Login = () => {
           </div>
         </div>
         <div className="login__right">
-          <h1>Right</h1>
+          <img src={image} alt="main image" />
         </div>
       </div>
     </>

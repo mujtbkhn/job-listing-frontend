@@ -1,0 +1,50 @@
+.details__main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffefef;
+    height: 100%;
+    padding: 5rem 2rem;
+}
+
+.companyName{
+    padding: 2rem 6rem;
+    border: 2px solid white;
+    background-color: white;
+    /* margin: 2rem 10rem; */
+    width: 100%;
+}
+.main{
+    margin-top: 2rem;
+    padding: 2rem 6rem;
+    border: 2px solid white;
+    background-color: white;
+    width: 100%;
+}
+.salary{
+    display: flex;
+    gap: 1rem;
+    
+}
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .skill {
+    background-color: #ffeeee;
+    color: #333;
+    border-radius: 1rem;
+    padding: 8px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .user_image{
+    width: 50px;
+}
+.btn{
+    display: flex;
+}

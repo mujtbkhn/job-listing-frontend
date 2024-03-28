@@ -1,0 +1,131 @@
+/* JobPost.css */
+*{
+    font-family:  Roboto, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.job_post_main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.job__post__left {
+    /* flex: 1; */
+    margin-right: 20px;
+    flex-basis: 50%;
+}
+
+.job__post__right {
+    /* flex: 1; */
+    flex-basis: 50%;
+
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job__post__left h1 {
+    /* font-size: 24px; */
+    margin-bottom: 20px;
+}
+
+.job__post__left div {
+    margin-bottom: 15px;
+}
+
+.job__post__left label {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.job__post__left input[type="text"],
+.job__post__left textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.job__post__left select {
+    width: 100%;
+    padding: 0.725rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.job__post__left .skill-set {
+    margin-top: 10px; /* Add margin-top for spacing */
+    display: flex;
+}
+.job__post__left textarea {
+    height: 100px;
+}
+
+.job__post__left button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.job__post__left button:last-child {
+    margin-right: 0;
+}
+
+.job__post__left button:hover {
+    background-color: #0056b3;
+}
+
+.job__post__left button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.job__post__left button:disabled:hover {
+    background-color: #ccc;
+}
+
+.job__post__left .skills_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.job__post__left .skills_container div {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.job__post__left .skills_container div button {
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.job__post__left .skills_container div button:hover {
+    color: #555;
+}
+
+.job__post__right > img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}

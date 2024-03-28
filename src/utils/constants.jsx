@@ -8,3 +8,5 @@ export const DEFAULT_SKILLS = [
     "express",
     "tailwind",
 ];
+
+export const USER_AVATAR = "https://api.multiavatar.com/stefan.svg";

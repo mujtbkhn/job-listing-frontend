@@ -1,0 +1,92 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 30px;
+    background-color: #ed5353;
+    color: white;
+}
+.navbar__right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search__job{
+    margin: 2rem 10rem;
+    border: 1px solid black;
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+.search__job > .input{
+    width: 100%;
+}
+.search__job > .input > input{
+    font-size: 1.5rem;
+}
+.skills{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.skills > select{
+    font-size: 1.525rem;
+    padding: 10px 20px;
+}
+.skills{
+    font-size: 1.525rem;
+    display: flex; 
+}
+.skills > span{
+    background-color: #f6c2c2;
+}
+.skills > span > div{
+    background-color: #ed5353;
+    cursor: pointer;
+}
+.clear__button{
+    display: flex;
+    justify-content: center;
+}
+.clear__button > button{
+    color: #ed5353;
+    background-color: white;
+}
+button{
+    padding: 10px 20px;
+    width: 13rem;
+    background-color: #ed5353;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+.apply_filter{
+    display: flex;
+    justify-content: center;
+}
+.jobs{
+    margin: 2rem 10rem;
+    border: 1px solid black;
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+.skill{
+    padding: 5px 8px;
+    background-color: #f6c2c2;
+    border-radius: 5px;
+}
+
+.edit__job{
+    padding: 10px 20px;
+    width: 13rem;
+    background-color: white;
+    border: 2px solid #ed5353;
+    border-radius: 5px;
+    color: #ed5353;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+.user_image{
+    width: 50px;
+}

@@ -1,6 +1,8 @@
 *{
     font-family:  Roboto, sans-serif;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 .register__main{
     display: flex;
@@ -8,8 +10,9 @@
 .register__left{
     display: flex;
     flex-direction: column;
-    flex-basis: 60%;
+    flex-basis: 50%;
     padding: 80px 50px;
+    gap: 10px;
 }
 .input{
     display: flex;
@@ -21,15 +24,22 @@
     margin-right: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border-style: none;
     border: 1px solid black;
 }
 .tandc{
     display: flex;
+    gap: 5px    ;
 }
 button{
     padding: 15px 60px;
+    width: 17rem;
+    background-color: #ed5353;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    font-style: bold;
 }
 .sign__in{
     display: flex;
@@ -39,5 +49,10 @@ button{
 }
 .register__right{
     display: flex;
-    flex-basis: 40%;
+    flex-basis: 50%;
+}
+.register__right > img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
 }
