@@ -1,5 +1,5 @@
 import axios from "axios";
-const backend_url = "http://localhost:3000/api/v1";
+const backend_url = "https://job-listing-backend-cpk7.onrender.com";
 
 export const createJobPost = async (JobPostPayload) => {
   try {
