@@ -1,5 +1,5 @@
 import axios from "axios";
-const backend_url = "https://job-listing-backend-cpk7.onrender.com";
+const backend_url = "https://job-listing-backend-82pe.onrender.com";
 
 export const createJobPost = async (JobPostPayload) => {
   try {
